@@ -1,0 +1,41 @@
+.QFrame {
+    background: black;
+}
+
+.BaseCalc {
+    background: black;
+}
+
+.MainFrame {
+    background: black;
+}
+
+.CreditCalc {
+    background: black;
+}
+
+.DepositCalc {
+    background: black;
+}
+
+.Graph {
+    background: white;
+}
+
+CreditCalc QLabel {
+   background: white;
+}
+
+DepositCalc QLabel {
+    background: white;
+}
+
+QPushButton {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+    stop:0.8 rgb(120,120,120),
+    stop:0.4 rgb(170,170,150));
+}
+
+.QLineEdit {
+    background: white;
+}
