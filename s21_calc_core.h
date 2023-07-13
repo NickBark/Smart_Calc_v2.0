@@ -7,7 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#define STRLEN 255
+#define STRLEN 355
 #define SIZE_OF_CORRECT 21
 #define S21_PI 3.14159265358979323846
 #define S21_EPS 1e-8

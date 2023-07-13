@@ -392,7 +392,7 @@ void BaseCalc::slotPbResult() {
         Priority pr = {};
         int diy = 1;
         double result = 0;
-        char resStr[255] = {};
+        char resStr[STRLEN] = {};
 
         QByteArray br = qStr.toLatin1();
         const char* inputStr = br.data();
@@ -406,7 +406,6 @@ void BaseCalc::slotPbResult() {
             //            free(pr.priority);
             return;
         }
-        qDebug() << resStr;
 
         if (wasX) {
             if (diy) {

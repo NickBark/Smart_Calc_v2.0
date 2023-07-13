@@ -34,7 +34,6 @@ void stackPop(Stack** stack) {
 int shuntingYard(const char* data, char* result, Priority* pr) {
     int ret = 0;
     char source[STRLEN] = {};
-    strcpy(source, data);
     int numb = 0;
     int rows = STRLEN;
     int columns = STRLEN;
@@ -46,15 +45,12 @@ int shuntingYard(const char* data, char* result, Priority* pr) {
         res[i] = calloc(columns, sizeof(char));
     }
 
-    if (strlen(source) > 255) {
+    if (strlen(data) > 255) {
         ret = 1;
         result = NULL;
     } else {
+        strcpy(source, data);
         numb = parsSourceStr(source, res);
-
-        for (size_t i = 0; i < STRLEN; i++) {
-            printf("-->%s\n", res[i]);
-        }
         if (verification(res, numb)) {
             if (parsTokenArr(res, result, numb, pr)) ret = 1;
         } else {
@@ -175,7 +171,7 @@ void calcPriorityNum(Stack** calc, int priority, char* token, double x) {
 
 int calcPriorityOp(Stack** calc, char* token, char** str, double* result) {
     double tmp = (*calc)->value;
-    char op[255] = {};
+    char op[STRLEN] = {};
     int ret = 0;
 
     *result = (*calc)->next->value;
